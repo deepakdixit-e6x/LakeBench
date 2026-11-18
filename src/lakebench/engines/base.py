@@ -38,6 +38,7 @@ class BaseEngine(ABC):
 
     SQLGLOT_DIALECT = None
     SUPPORTS_SCHEMA_PREP = False
+    SUPPORTS_LOAD = True
     SUPPORTS_MOUNT_PATH = True
     TABLE_FORMAT = "delta"
     #: Top-level modules the engine needs at runtime. They are imported lazily, so a

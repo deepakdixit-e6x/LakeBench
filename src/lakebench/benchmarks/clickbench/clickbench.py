@@ -5,6 +5,7 @@ from ...engines.base import BaseEngine
 from ...engines.daft import Daft
 from ...engines.databricks_sql_warehouse import DatabricksSQLWarehouse
 from ...engines.duckdb import DuckDB
+from ...engines.e6data import E6Data
 from ...engines.fabric_data_warehouse import FabricDataWarehouse
 from ...engines.polars import Polars
 from ...engines.sail import Sail
@@ -70,6 +71,7 @@ class ClickBench(_LoadAndQuery):
     BENCHMARK_IMPL_REGISTRY = {
         Spark: SparkClickBench,
         DuckDB: DuckDBClickBench,
+        E6Data: None,
         Sail: SailClickBench,
         Polars: PolarsClickBench,
         Daft: DaftClickBench,

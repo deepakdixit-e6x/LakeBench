@@ -3,6 +3,7 @@ import logging
 from ...engines.daft import Daft
 from ...engines.databricks_sql_warehouse import DatabricksSQLWarehouse
 from ...engines.duckdb import DuckDB
+from ...engines.e6data import E6Data
 from ...engines.fabric_data_warehouse import FabricDataWarehouse
 from ...engines.polars import Polars
 from ...engines.sail import Sail
@@ -76,6 +77,7 @@ class TPCDS(_LoadAndQuery):
     BENCHMARK_IMPL_REGISTRY = {
         Spark: None,
         DuckDB: None,
+        E6Data: None,
         Daft: None,
         Polars: None,
         Sail: None,

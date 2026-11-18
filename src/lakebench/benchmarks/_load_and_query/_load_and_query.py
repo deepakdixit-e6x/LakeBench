@@ -334,6 +334,12 @@ class _LoadAndQuery(BaseBenchmark):
         if mode not in self.MODE_REGISTRY:
             raise ValueError(f"Unknown mode '{mode}'. Supported modes: {self.MODE_REGISTRY}.")
 
+        if mode in ("load", "load_and_query") and not self.engine.SUPPORTS_LOAD:
+            raise NotImplementedError(
+                f"{type(self.engine).__name__} supports query benchmarks on existing catalog tables. "
+                "Use mode='query' or mode='power_test' and load data separately."
+            )
+
         self.mode = mode
         result_start_index = len(self.results)
         try:
@@ -469,6 +475,10 @@ class _LoadAndQuery(BaseBenchmark):
           for each table.
         - Results are posted after all tables have been processed.
         """
+        if not self.engine.SUPPORTS_LOAD:
+            raise NotImplementedError(
+                f"{type(self.engine).__name__} supports query benchmarks on existing catalog tables. Load data separately."
+            )
         # set the mode if the module is being called directly
         if inspect.currentframe().f_back.f_code.co_name not in ("run", "_run_load_and_query"):
             self.mode = "load"

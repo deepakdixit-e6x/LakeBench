@@ -65,6 +65,7 @@ LakeBench supports multiple lakehouse compute engines. Each benchmark scenario d
 
 | Engine          | ELTBench | TPC-DS | TPC-H   | ClickBench |
 |-----------------|:--------:|:------:|:-------:|:----------:|
+| [e6data (existing tables, SQL compatibility requires live validation)](docs/engines/e6data/README.md) | — | Query | Query | Query |
 | [Spark (Generic)](docs/engines/spark/README.md) |    ✅    |   ✅   |   ✅  |    ✅    |
 | [Fabric Spark](docs/engines/fabric-spark/README.md) |    ✅    |   ✅   |   ✅  |    ✅    |
 | [Synapse Spark](docs/engines/synapse-spark/README.md) |    ✅    |   ✅   |   ✅  |    ✅    |

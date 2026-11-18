@@ -36,6 +36,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+e6data = ["e6data-python-connector==2.3.15", "pandas>=1.4.0", "deltalake>=1.5.1,<1.7; python_version >= '3.10'"]
 # The core `pyarrow>=14.0.0` floor is deliberately low (see above); engines that
 # need newer Arrow for table operations state it explicitly in their extras.
 duckdb = ["duckdb==1.5.5; python_version >= '3.10'", "deltalake==1.6.2; python_version >= '3.10'", "pyarrow>=16.0.0; python_version >= '3.10'"]

@@ -4,6 +4,7 @@ LakeBench engines provide a consistent benchmark interface while preserving each
 
 | Engine | Install | Primary runtime | Documentation | Coverage |
 |---|---|---|---|---|
+| e6data | `lakebench[e6data]` | Remote e6data cluster, existing tables | [e6data](e6data/README.md) | Unit tests; live validation pending |
 | Generic Spark | `lakebench[spark]` | Local or Spark runtime | [Spark](spark/README.md) | [Report](../../reports/coverage/spark.md) |
 | Fabric Spark | Runtime-provided Spark | Microsoft Fabric | [Fabric Spark](fabric-spark/README.md) | — |
 | Synapse Spark | Runtime-provided Spark | Azure Synapse | [Synapse Spark](synapse-spark/README.md) | — |

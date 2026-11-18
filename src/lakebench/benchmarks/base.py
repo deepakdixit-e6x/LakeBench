@@ -115,7 +115,7 @@ class BaseBenchmark(ABC):
         self.result_table_uri = result_table_uri
         self.save_results = save_results
 
-        if not engine.SUPPORTS_MOUNT_PATH and input_parquet_folder_uri[:1] == "/":
+        if not engine.SUPPORTS_MOUNT_PATH and input_parquet_folder_uri and input_parquet_folder_uri[:1] == "/":
             raise ValueError(
                 f"""Mount path is not supported for {type(engine).__name__} engine.
                 Please provide fully qualified uri for `input_folder_uri`."""
